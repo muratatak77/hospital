@@ -13,17 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20140618142747) do
 
-  create_table "patients", force: true do |t|
+  create_table "housekeepers", force: true do |t|
     t.string   "name"
     t.string   "surname"
-    t.integer  "doctor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "housekeepers", force: true do |t|
+  create_table "patients", force: true do |t|
     t.string   "name"
     t.string   "surname"
+    t.integer  "doctor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
