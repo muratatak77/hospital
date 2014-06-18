@@ -1,5 +1,6 @@
 Hospital::Application.routes.draw do
 
+  
   resources :doctors, path: '/doktorlar'
   resources :patients, path: '/hastalar'
 
@@ -9,7 +10,7 @@ Hospital::Application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'pages#index'
 
-   get "/anasayfa", to: "pages#index"
+   get "/babasayfa", to: "pages#index", as: "mainpage"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
