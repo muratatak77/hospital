@@ -3,11 +3,9 @@
 one:
   name: MyString
   surname: MyString
-  bio: MyText
   doctor_id: 1
 
 two:
   name: MyString
   surname: MyString
-  bio: MyText
   doctor_id: 1
