@@ -21,4 +21,11 @@ ActiveRecord::Schema.define(version: 20140618142747) do
     t.datetime "updated_at"
   end
 
+  create_table "housekeepers", force: true do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end
