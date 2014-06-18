@@ -3,9 +3,9 @@
 one:
   name: MyString
   surname: MyString
-  consultancy: MyString
+  consultancy: MyText
 
 two:
   name: MyString
   surname: MyString
-  consultancy: MyString
+  consultancy: MyText
