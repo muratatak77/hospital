@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140618145132) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "bio",         limit: 255
+    t.string   "phone"
   end
 
   create_table "housekeepers", force: true do |t|
