@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  category: MyString
+  model: MyString
 
 two:
   name: MyString
-  category: MyString
+  model: MyString
