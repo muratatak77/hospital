@@ -1,6 +1,6 @@
 class Patient < ActiveRecord::Base
 
-  def regards(arg = 3)
+  def regards(arg=1)
     "#{full_name} #{check(arg)} nish medical"
   end
 
