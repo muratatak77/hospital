@@ -1,0 +1,4 @@
+<h1>Müdürler</h1>
+<% @managers.each do |t| %>
+	<p><%= t.full_name %> - <%= link_to "Detay", manager_path(t) %></p>
+<% end %>
