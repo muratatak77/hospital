@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20140618145137) do
 
   create_table "doctors", force: true do |t|
@@ -20,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140618145137) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "bio",         limit: 255
-    t.string   "phone"
+    t.integer  "phone",       limit: 255
   end
 
   create_table "housekeepers", force: true do |t|
