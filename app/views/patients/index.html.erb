@@ -1,7 +1,10 @@
-<h1>hastalar</h1>
-
-<% @patients.each do |p| %>
-	
-	<%= p.regards %>
-
-<% end -%>
+<h3>Hastalar</h3>
+	<% @patients.each do |patient|  %>
+	<ol>
+		<li>
+			<%= patient.full_name %>
+			<%= link_to 'Hasta Bilgileri', patient %>
+			<%= link_to 'Düzenle', edit_patient_path(patient) %>
+		</li>
+	</ol>
+	<% end -%>

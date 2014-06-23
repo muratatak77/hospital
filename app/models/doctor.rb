@@ -4,8 +4,4 @@ class Doctor < ActiveRecord::Base
 		"#{name} #{surname}"
 	end
 
-	def self.full_name
-		puts "Hotturu"
-	end
-
 end

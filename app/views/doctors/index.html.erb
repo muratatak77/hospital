@@ -1,5 +1,12 @@
-doktorlar
+<h2>Doktorlar</h2>
 
-<% @doctors.each do |d| %>
-	<h1><%= d.full_name %></h1>
-<% end %>	
+	<% @doctors.each do |doctor|  %>
+	<ol>
+		<li>
+			<%= doctor.full_name %>
+			<%= link_to 'Doctor Bilgileri', doctor %>
+			<%= link_to 'Düzenle', edit_doctor_path(doctor) %>
+		</li>
+
+	</ol>
+	<% end -%>

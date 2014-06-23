@@ -1,3 +1,10 @@
-<h1><%=  params[:id] %> id'li doktor</h1>
 
-<%= link_to "Duzenle" , edit_doctor_path(params[:id])  %>
+<h4>Doctor <%= @doctor.full_name %></h4>
+
+	<strong>Uzmanlik alani:</strong>
+		<%= @doctor.consultancy %><br>
+	<strong>Biyografi:</strong>
+		<%= @doctor.bio %>
+
+
+
