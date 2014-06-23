@@ -1,4 +1,18 @@
-<h1>Müdürler</h1>
+
+<div style="width: 50%;" >
+	<div style="float:left;"><h1>Müdürler</h1></div> 
+	<div style="float:right; padding: 10px;"><h2>-<%= link_to "Yeni Mudur Geldi." , new_manager_path %></h2></div>
+</div>
+
+<div style="clear:both;">
 <% @managers.each do |t| %>
-	<p><%= t.full_name %> - <%= link_to "Detay", manager_path(t) %></p>
-<% end %>
+	<p>
+		<%= t.full_name %> 
+		- <%= link_to "Detay", manager_path(t) %> 
+		- <%= link_to "Duzenle" , edit_manager_path(t) %>
+		- <%=  link_to 'istifa' , manager_path(t) , method: :delete, data: { confirm: 'Emin misin ?'} %>
+	</p>
+	<hr>
+
+<% end %>	
+</div>

@@ -1,2 +1,29 @@
 <h1>Managers#new</h1>
 <p>Find me in app/views/managers/new.html.erb</p>
+
+
+<%= form_for @manager do |f| %>
+		<p>
+			<%= f.label :name%><br>
+			<%= f.text_field :name %><br>
+		</p>
+
+		<p>
+			<%= f.label :surname %><br>
+			<%= f.text_field :surname %>
+		</p>
+
+		<p>
+			<%= f.label :phone %><br>
+			<%= f.text_field :phone %>
+		</p>
+
+		<p>
+			<%= f.label :departman %><br>
+			<%= select_tag 'manager[departman]' , options_for_select(Manager::DEPARTMANS) %>
+		</p>
+
+		<%= submit_tag 'Iptal' , name: "cancel" %>
+		<%= submit_tag 'Kaydet' , name: "save" %>
+<% end %>
+  
