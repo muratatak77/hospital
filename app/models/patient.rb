@@ -1,5 +1,9 @@
 class Patient < ActiveRecord::Base
 
+  def full_name
+    "#{name} #{surname}"
+  end
+  
   def regards(arg=1)
     "#{full_name} #{check(arg)} nish medical"
   end
@@ -15,8 +19,6 @@ private
         "Sizi kaybettik. gule gule"
       end
   end
-  def full_name
-    "#{name} #{surname}"
-  end
+  
   
 end

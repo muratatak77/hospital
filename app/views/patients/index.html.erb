@@ -5,6 +5,7 @@
 			<%= patient.full_name %>
 			<%= link_to 'Hasta Bilgileri', patient %>
 			<%= link_to 'Düzenle', edit_patient_path(patient) %>
+			<%= link_to 'Sil', patient_path(patient),method: :delete, data: { confirm:'Emin misiniz?'} %>
 		</li>
 	</ol>
 	<% end -%>

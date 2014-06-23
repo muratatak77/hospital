@@ -1,4 +1,12 @@
-<h1>Müdürler</h1>
-<% @managers.each do |t| %>
-	<p><%= t.full_name %> - <%= link_to "Detay", manager_path(t) %></p>
-<% end %>
+<h3>Müdürler</h3>
+	
+	<% @managers.each do |manager|  %>
+	<ol>
+		<li>
+			<%= manager.full_name %>
+			<%= link_to 'Mudur Bilgileri', manager %>
+			<%= link_to 'Düzenle', edit_manager_path(manager) %>
+			<%= link_to 'Sil', manager_path(manager),method: :delete, data: { confirm:'Emin misiniz?'} %>
+		</li>
+	</ol>
+	<% end -%>
