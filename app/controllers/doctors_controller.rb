@@ -8,6 +8,10 @@ class DoctorsController < ApplicationController
 	
 	end
 
+	def new2
+		
+	end
+
 	def edit
 		
 	end

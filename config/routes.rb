@@ -1,9 +1,10 @@
 Hospital::Application.routes.draw do
 
-  
+  get '/doktorlar/new2', to: 'doctors#new2'
   resources :managers, path: "/mudurler"
   resources :doctors, path: '/doktorlar'
   resources :patients, path: '/hastalar'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
