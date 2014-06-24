@@ -1,6 +1,7 @@
 class PatientsController < ApplicationController
 	
-	def index		
+	def index
+	@patients = Patient.all	
 	end
 
 end

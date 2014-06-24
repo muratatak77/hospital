@@ -1,6 +1,7 @@
 Hospital::Application.routes.draw do
 
   
+  resources :managers, path: "/mudurler"
   resources :doctors, path: '/doktorlar'
   resources :patients, path: '/hastalar'
 
