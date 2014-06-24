@@ -12,4 +12,8 @@ class DoctorsController < ApplicationController
 		
 	end
 
+	def create
+		puts "create geldi"	
+	end
+
 end
