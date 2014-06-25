@@ -1,4 +1,26 @@
-<%= form_for @doctor do |f|%>
+
+<%= form_tag doctor_path(@doctor), method: :put do%>
+
+	<strong><%= label_tag(:name, "Name:") %></strong> 	
+	<br>
+	<strong><%= text_field_tag(:name, @doctor.name) %></strong> 	    
+	<br>
+	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
+	<br>
+	<strong><%= text_field_tag(:surname, @doctor.surname) %></strong>      
+	<br>
+	<strong><%= label_tag(:consultancy, "Consultancy:") %></strong> 
+	<br>
+	<strong><%= text_field_tag(:consultancy, @doctor.consultancy) %></strong> 
+	<br>
+	<strong><%= label_tag(:bio,'Biyografi:') %></strong> 
+	<br>
+	<strong><%= text_area_tag(:bio, @doctor.bio) %></strong> 
+	<br>
+	<%= submit_tag('Update Doctor') %>
+<% end -%>
+
+ <!---<%= form_for @doctor do |f|%>
 <p>
 	<%= f.label :name %><br>
 	<%= f.text_field :name %>
@@ -18,4 +40,5 @@
 	<%=f.submit %>
 
 
-<% end -%>
+<% end -%> 
+-->

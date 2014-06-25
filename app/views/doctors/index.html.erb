@@ -4,10 +4,10 @@
 	<ol>
 		<li>
 			<%= doctor.full_name %>
-			<%= link_to 'Doctor Bilgileri', doctor %>
-			<%= link_to 'Düzenle', edit_doctor_path(doctor) %>
-			<%= link_to 'Sil', doctor_path(doctor),method: :delete, data: { confirm:'Emin misiniz?'} %>
+			<%= link_to 'Doctor Bilgileri', doctor %> | 
+			<%= link_to 'Düzenle', edit_doctor_path(doctor) %> | 
+			<%= link_to 'Sil', doctor_path(doctor),method: :delete, data: { confirm:'Emin misiniz?'} %>	
 		</li>
-
 	</ol>
 	<% end -%>
+<%= link_to 'Yeni Doktor', new_doctor_path %>

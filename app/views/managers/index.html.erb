@@ -4,9 +4,11 @@
 	<ol>
 		<li>
 			<%= manager.full_name %>
-			<%= link_to 'Mudur Bilgileri', manager %>
-			<%= link_to 'Düzenle', edit_manager_path(manager) %>
+			<%= link_to 'Mudur Bilgileri', manager %> | 
+			<%= link_to 'Düzenle', edit_manager_path(manager) %> | 
 			<%= link_to 'Sil', manager_path(manager),method: :delete, data: { confirm:'Emin misiniz?'} %>
+			
 		</li>
 	</ol>
 	<% end -%>
+<%= link_to 'Yeni Mudur', new_manager_path %>

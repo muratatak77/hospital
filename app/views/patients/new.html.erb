@@ -1,3 +1,22 @@
 <h4>Yeni hasta ekle:</h4>
 
-<%= render 'form' %>
+<%= form_tag "/hastalar", method: :post  do%>
+
+	<strong><%= label_tag(:name, "Name:") %></strong> 	
+	<br>
+	<strong><%= text_field_tag(:name) %></strong> 	    
+	<br>
+	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
+	<br>
+	<strong><%= text_field_tag(:surname) %></strong>      
+	<br>
+	<strong><%= label_tag(:disease, "Disease:") %></strong> 
+	<br>
+	<strong><%= text_field_tag(:disease) %></strong> 
+	<br>
+	<strong><%= label_tag(:bio,'Sickness Past') %></strong>
+	<br>
+	<strong><%= text_field_tag(:bio) %></strong>
+	<br>
+	<%= submit_tag('Create Patient') %>
+<% end -%>

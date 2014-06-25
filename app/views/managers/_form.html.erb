@@ -1,5 +1,21 @@
 
-<%= form_for @manager do |f|%>
+
+<%= form_tag manager_path(@manager), method: :put do%>
+
+	<strong><%= label_tag(:name, "Name:") %></strong> 	
+	<br>
+	<strong><%= text_field_tag(:name, @manager.name) %></strong> 	    
+	<br>
+	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
+	<br>
+	<strong><%= text_field_tag(:surname, @manager.surname) %></strong>      
+	<br>
+	<strong><%= text_field_tag(:phone, @manager.phone) %></strong>
+
+	<%= submit_tag('Update Manager') %>
+<% end -%>
+
+<!--<%= form_for @manager do |f|%>
 <p>
 	<%= f.label :name %><br>
 	<%= f.text_field :name %>
@@ -17,3 +33,4 @@
 
 
 <% end -%>
+-->

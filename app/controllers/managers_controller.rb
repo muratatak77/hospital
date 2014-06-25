@@ -1,4 +1,6 @@
 class ManagersController < ApplicationController
+before_action :set_manager, only:[:show, :edit, :update, :destroy]   
+  
   def index
   	@managers = Manager.all
   end
@@ -17,16 +19,15 @@ class ManagersController < ApplicationController
   end
 
   def show
-  	@manager = Manager.find(params[:id])
+  
   end
 
   def edit
-    @manager = Manager.find(params[:id])
-
+    
   end
 
   def update
-     @manager = Manager.find(params[:id])
+     
      if @manager.update(manager_params)
         redirect_to @manager
      else
@@ -35,13 +36,15 @@ class ManagersController < ApplicationController
   end
 
   def destroy
-    @manager = Manager.find(params[:id])
     @manager.destroy
       redirect_to managers_path
   end
-
+private
+  def set_manager
+    @manager = Manager.find(params[:id])
+  end
   def manager_params
-    params.require(:manager).permit(:name,:surname,:phone)
+    params.permit(:name,:surname,:phone)
   end
 
 end

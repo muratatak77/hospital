@@ -1,3 +1,22 @@
 <h4>Yeni doktor ekle:</h4>
 
-<%= render 'form' %>
+<%= form_tag "/doktorlar", method: :post  do%>
+
+	<strong><%= label_tag(:name, "Name:") %></strong> 	
+	<br>
+	<strong><%= text_field_tag(:name) %></strong> 	    
+	<br>
+	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
+	<br>
+	<strong><%= text_field_tag(:surname) %></strong>      
+	<br>
+	<strong><%= label_tag(:consultancy, "Consultancy:") %></strong> 
+	<br>
+	<strong><%= text_field_tag(:consultancy) %></strong> 
+	<br>
+	<strong><%= label_tag(:bio,'Biyografi:') %></strong> 
+	<br>
+	<strong><%= text_area_tag(:bio) %></strong> 
+	<br>
+	<%= submit_tag('Create Doctor') %>
+<% end -%>
