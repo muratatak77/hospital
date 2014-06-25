@@ -1,5 +1,7 @@
 class Manager < ActiveRecord::Base
+	has_many :doctors
+	
 	def full_name
-		name+" "+surname
+		"#{name} #{surname}"
 	end
 end

@@ -4,6 +4,7 @@ Hospital::Application.routes.draw do
   resources :managers, path: "/mudurler"
   resources :doctors, path: '/doktorlar'
   resources :patients, path: '/hastalar'
+  resources :consultancies, path: '/bolumler'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,7 +12,7 @@ Hospital::Application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'pages#index'
 
-   get "/babasayfa", to: "pages#index", as: "mainpage"
+   get "/anasayfa", to: "pages#index", as: "mainpage"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

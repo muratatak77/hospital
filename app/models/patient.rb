@@ -1,4 +1,5 @@
 class Patient < ActiveRecord::Base
+  belongs_to :doctor
 
   def full_name
     "#{name} #{surname}"

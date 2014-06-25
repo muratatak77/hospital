@@ -1,10 +1,26 @@
 
 <h4>Doctor <%= @doctor.full_name %></h4>
 
-	<strong>Uzmanlik alani:</strong>
-		<%= @doctor.consultancy %><br>
+<p>
+	<strong>Uzmanlik alani:	</strong>
+	<%= @doctor.consultancy %>
+</p>
+<p>	
 	<strong>Biyografi:</strong>
 		<%= @doctor.bio %>
+</p>
+<p>
+	<strong>Telefon Numarasi:</strong>
+		<%= @doctor.phone %>
+</p>
+<p>	
+	<strong>Muduru:</strong>
+		<%= @doctor.manager.full_name %>
+</p>
+<p>		
+	<strong>Hasta Sayisi: </strong>
+		<%= @doctor.patients.count %>
+</p>
 
 
 
