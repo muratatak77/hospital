@@ -1,6 +1,12 @@
-doktorlar
-<%= params[:user] %>
-<%= params[:adress] %>
+<h3>Doktorlar</h3>
+
+<h4><%= link_to "Yeni Doktor" , new_doctor_path %><br></h4>
+
+
 <% @doctors.each do |d| %>
-	<h1><%= d.full_name %></h1>
+	<%= d.id %>	 
+	- <%= d.full_name %> - <%= link_to "Detay" , doctor_path(d) %> 
+	-  <%= link_to "Duzenle" , edit_doctor_path(d) %>
+	- <%= link_to "Sil", doctor_path(d) ,  method: :delete %>
+	<hr>
 <% end %>	

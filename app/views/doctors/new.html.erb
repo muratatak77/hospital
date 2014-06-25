@@ -1,6 +1,32 @@
-<form name="input" action="/doktorlar" method="post">
-Username: <input type="text" name="user"><br />
-Adress: <input type="text" name="adress">
-<input type="submit" value="Submit">
-</form>
+<%= form_tag doctors_path, method: :post do  %>
 
+	<p>
+		<%= label_tag "Ad" %>
+		<%= text_field_tag :name %><br />
+	</p>
+
+	<p>
+		<%= label_tag "Soyad" %>
+		<%= text_field_tag :surname %><br />
+	</p>
+
+	<p>
+		<%= label_tag  "Uzmanlik" %>
+		<%= text_field_tag :consultancy %>
+	</p>
+
+
+	<p>
+		<%= label_tag  "Ozgecmis" %>
+		<%= text_area_tag :bio %>
+	</p>
+
+
+	<p>
+		<%= label_tag  "Tel" %>
+		<%= telephone_field_tag :phone %>
+	</p>
+
+
+	<%= button_tag "Gondert" %>
+<% end %>

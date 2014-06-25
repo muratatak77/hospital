@@ -1,7 +1,20 @@
 <h1>hastalar</h1>
 
-<% @patients.each do |p| %>
-	
-	<%= p.regards %>
+<h3>
+	<%= link_to "Yeni Hasta Ekle" , new_patient_path %>
+</h3>
 
-<% end -%>
+<H4>id - ad soyad - tel - doktor </H4>
+<br>
+
+<% @patients.each do |p| %>
+	<%= p.full_name %>
+
+	<% unless p.doctor_id == nil %>
+		<%= Doctor.find(p.doctor_id).full_name %>
+	<% end %>
+
+	 - <%= link_to "Detay" , patient_path(p) %> - <%= link_to "Duzenle" , edit_patient_path(p) %>
+	 - <%= link_to "Sil", patient_path(p) ,  method: :delete %>
+	<hr>
+<% end %>

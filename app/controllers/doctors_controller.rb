@@ -5,19 +5,31 @@ class DoctorsController < ApplicationController
 	end
 
 	def show
-	
-	end
-
-	def new2
-		
+		@doctor = Doctor.find(params[:id])
 	end
 
 	def edit
-		
+		@doctor = Doctor.find(params[:id])
+	end
+
+	def update
+		@doctor = Doctor.find(params[:id]).update(permit_params)
+		redirect_to doctors_path
 	end
 
 	def create
-		puts "create geldi"	
+		Doctor.create(permit_params)
+		redirect_to doctors_path
+	end
+
+	def destroy
+		Doctor.find(params[:id]).destroy
+		redirect_to doctors_path
+	end
+
+	private
+	def permit_params
+		params.permit(:name,:surname,:consultancy,:bio,:phone)
 	end
 
 end
