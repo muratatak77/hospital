@@ -6,6 +6,8 @@ Hospital::Application.configure do
   # since you don't have to restart the web server when you make code changes.
 
   ENV['WATCH_FOLDER']="/Users/scaryguy/nish/watch_development"
+  ENV['TEMP_FOLDER'] = "/Users/muratatak/temp/dev"
+  
 
   config.cache_classes = false
 

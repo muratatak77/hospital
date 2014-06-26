@@ -7,6 +7,8 @@
 <H4>id - ad soyad - tel - doktor </H4>
 <br>
 
+<% ENV['TEMP_FOLDER'] %>
+
 <% @patients.each do |p| %>
 	<%= p.full_name %>
 

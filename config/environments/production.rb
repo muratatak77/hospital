@@ -2,7 +2,8 @@ Hospital::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   ENV['WATCH_FOLDER']="/Users/scaryguy/nish/watch_production"
-
+  ENV['TEMP_FOLDER'] = "/Users/muratatak/temp/prod"
+  
   # Code is not reloaded between requests.
   config.cache_classes = true
 
