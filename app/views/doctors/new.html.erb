@@ -28,5 +28,13 @@
 	</p>
 
 
+	<p>
+		<%= label_tag "Mudur Sec" %>
+		<%= select_tag :manager_id, options_from_collection_for_select(@managers, "id", "name") %>
+	</p>
+
+
+
+
 	<%= button_tag "Gondert" %>
 <% end %>

@@ -1,5 +1,6 @@
 class Doctor < ActiveRecord::Base
 	has_many :patients, dependent: :destroy
+	belongs_to :manager
 
 	def full_name
 		"#{name} #{surname}"

@@ -1,1 +1,9 @@
 <h1><%= @manager.full_name %></h1>
+
+
+Mudure Bagli doktorlar
+<p>
+
+<%= @manager.doctors.each do |m| %>
+	<%= m.name m.surname %>
+<% end %>

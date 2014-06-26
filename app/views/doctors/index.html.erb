@@ -3,8 +3,17 @@
 <h4><%= link_to "Yeni Doktor" , new_doctor_path %><br></h4>
 
 
+ID - MUDUR - FULL NAME - 
+<hr>
 <% @doctors.each do |d| %>
 	<%= d.id %>	 
+
+		<% unless d.manager_id == nil %>
+			- <%= Manager.find(d.manager_id).name %>
+		<% else %>
+			<span style="padding-left: 70px;"></span>
+		<% end %>
+
 	- <%= d.full_name %> - <%= link_to "Detay" , doctor_path(d) %> 
 	-  <%= link_to "Duzenle" , edit_doctor_path(d) %>
 	- <%= link_to "Sil", doctor_path(d) ,  method: :delete %>

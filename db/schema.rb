@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623111604) do
+ActiveRecord::Schema.define(version: 20140626113722) do
 
   create_table "doctors", force: true do |t|
     t.string   "name"
@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(version: 20140623111604) do
     t.datetime "updated_at"
     t.text     "bio",         limit: 255
     t.integer  "phone",       limit: 255
+    t.integer  "manager_id"
   end
+
+  add_index "doctors", ["manager_id"], name: "index_doctors_on_manager_id"
 
   create_table "housekeepers", force: true do |t|
     t.string   "name"
@@ -43,10 +46,12 @@ ActiveRecord::Schema.define(version: 20140623111604) do
   create_table "patients", force: true do |t|
     t.string   "name"
     t.string   "surname"
-    t.integer  "doctor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone"
+    t.integer  "doctor_id"
   end
+
+  add_index "patients", ["doctor_id"], name: "index_patients_on_doctor_id"
 
 end

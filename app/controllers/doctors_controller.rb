@@ -10,6 +10,11 @@ class DoctorsController < ApplicationController
 
 	def edit
 		@doctor = Doctor.find(params[:id])
+		@managers = Manager.all
+	end
+
+	def new
+		@managers = Manager.all
 	end
 
 	def update
@@ -29,7 +34,7 @@ class DoctorsController < ApplicationController
 
 	private
 	def permit_params
-		params.permit(:name,:surname,:consultancy,:bio,:phone)
+		params.permit(:name,:surname,:consultancy, :manager_id, :bio,:phone)
 	end
 
 end

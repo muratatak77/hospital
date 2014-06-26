@@ -30,5 +30,12 @@ doctor edit
 		<%= telephone_field_tag :phone ,  @doctor.phone %>
 	</p>
 
+
+	<p>
+		<%= label_tag "Mudur Sec" %>
+		<%= select_tag :manager_id, options_from_collection_for_select(@managers, "id", "full_name" , @doctor.manager_id ) %>
+	</p>
+
+
 	<%= button_tag "Duzenle" %>
 <% end %>

@@ -1,3 +1,11 @@
 <h1><%=  params[:id] %> id'li doktor</h1>
 
-<%= link_to "Duzenle" , edit_doctor_path(params[:id])  %>
+Doktorun hastalari
+
+<% @doctor.patients.each do |p| %>
+<%= p.name %> -  <%= p.surname %>
+<% end %>
+
+<p>
+
+<%= link_to "Duzenle" , edit_doctor_path(params[:id])  %></p>
