@@ -39,6 +39,6 @@ private
 	
 	end
 	def patient_params
-		params.permit(:name,:surname,:disease,:bio)	
+		params.permit(:name,:surname,:disease,:bio, :doctor_id)	
 	end
 end

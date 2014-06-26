@@ -1,25 +1,39 @@
 
 <%= form_tag doctor_path(@doctor), method: :put do%>
-
-	<strong><%= label_tag(:name, "Name:") %></strong> 	
+<p>
+	<strong><%= label_tag(:name, "Name:") %></strong> 
 	<br>
-	<strong><%= text_field_tag(:name, @doctor.name) %></strong> 	    
+	<%= text_field_tag(:name,@doctor.name) %>
+</p>		
+<p>
+	<strong><%= label_tag(:surname, 'Surname:') %></strong>
 	<br>
-	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
+	<%= text_field_tag(:surname,@doctor.surname) %>
+</p>
+<p>
+	<strong><%= label_tag(:consultancy, "Consultancy:") %></strong>
 	<br>
-	<strong><%= text_field_tag(:surname, @doctor.surname) %></strong>      
+	<%= text_field_tag(:consultancy,@doctor.consultancy) %>
+</p>
+<p>
+	<strong><%= label_tag(:phone, "Phone") %></strong>
 	<br>
-	<strong><%= label_tag(:consultancy, "Consultancy:") %></strong> 
+	<%= text_field_tag(:phone, @doctor.phone) %>
+</p>
+<p>
+	<strong><%= label_tag(:manager_id, 'Manager:') %></strong>
 	<br>
-	<strong><%= text_field_tag(:consultancy, @doctor.consultancy) %></strong> 
-	<br>
+	<%= options_from_collection_for_select(Manager.all, :id, :full_name) %>
+	
+</p>   
+<p>
 	<strong><%= label_tag(:bio,'Biyografi:') %></strong> 
 	<br>
-	<strong><%= text_area_tag(:bio, @doctor.bio) %></strong> 
-	<br>
+	<%= text_area_tag(:bio) %>
+</p>
+	
 	<%= submit_tag('Update Doctor') %>
 <% end -%>
-
  <!---<%= form_for @doctor do |f|%>
 <p>
 	<%= f.label :name %><br>

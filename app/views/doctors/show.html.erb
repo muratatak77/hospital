@@ -21,6 +21,14 @@
 	<strong>Hasta Sayisi: </strong>
 		<%= @doctor.patients.count %>
 </p>
+<p>
+	<strong>Hastalari:</strong> <br>
+	<% @doctor.patients.each do |doctor_patient| %>
+		<%= doctor_patient.full_name %>
+		<br>
+
+	<% end -%>
+</p>
 
 
 

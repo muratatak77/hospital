@@ -1,23 +1,22 @@
 
 <%= form_tag patient_path(@patient), method: :put do%>
-
+<p>
 	<strong><%= label_tag(:name, "Name:") %></strong> 	
-	<br>
-	<strong><%= text_field_tag(:name, @patient.name) %></strong> 	    
-	<br>
-	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
-	<br>
-	<strong><%= text_field_tag(:surname, @patient.surname) %></strong>      
-	<br>
-	<strong><%= label_tag(:disease) %></strong>
-	<br>
-	<strong><%= text_field_tag(:disease, @patient.disease) %></strong>
-	<br>
-	<strong><%= label_tag(:bio, 'Sickness Past') %></strong>
-	<br>
-	<strong><%= text_field_tag(:bio, @patient.bio) %></strong>
-	<br>
-	<%= submit_tag('Update Patient') %>
+	
+	<%= text_field_tag(:name, @patient.name) %>	    
+</p>	
+<p>	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
+	
+	<%= text_field_tag(:surname, @patient.surname) %>    
+</p>	
+<p>	<strong><%= label_tag(:disease) %></strong>
+	
+	<%= text_field_tag(:disease, @patient.disease) %>
+</p>	
+<p>	<strong><%= label_tag(:bio, 'Sickness Past') %>/strong>
+	
+	<%= text_field_tag(:bio, @patient.bio) %>
+</p>	<%= submit_tag('Update Patient') %>
 <% end -%>
 <!--
 <%= form_for @patient do |f|%>

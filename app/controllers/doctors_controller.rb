@@ -43,7 +43,7 @@ private
 	end
 	
 	def doctor_params
-		params.permit(:name,:surname,:consultancy,:bio)
+		params.permit(:name,:surname,:consultancy,:phone,:bio,:manager_id)
 	end
 	
 end

@@ -2,21 +2,25 @@
 
 <%= form_tag "/hastalar", method: :post  do%>
 
-	<strong><%= label_tag(:name, "Name:") %></strong> 	
-	<br>
-	<strong><%= text_field_tag(:name) %></strong> 	    
-	<br>
-	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
-	<br>
-	<strong><%= text_field_tag(:surname) %></strong>      
-	<br>
-	<strong><%= label_tag(:disease, "Disease:") %></strong> 
-	<br>
-	<strong><%= text_field_tag(:disease) %></strong> 
-	<br>
-	<strong><%= label_tag(:bio,'Sickness Past') %></strong>
-	<br>
-	<strong><%= text_field_tag(:bio) %></strong>
-	<br>
-	<%= submit_tag('Create Patient') %>
+<p>	<strong><%= label_tag(:name, "Name:") %></strong> 	
+	
+		<%= text_field_tag(:name) %>	    
+</p>	
+<p><strong><%= label_tag(:surname, 'Surname:') %></strong> 
+	
+		<%= text_field_tag(:surname) %>     
+</p>	
+<p>	<strong><%= label_tag(:disease, "Disease:") %></strong> 
+	
+		<%= text_field_tag(:disease) %>
+</p>	
+<p>	<strong><%= label_tag(:bio,'Sickness Past') %></strong>
+	
+		<%= text_field_tag(:bio) %>
+</p>	
+<p>	<strong><%= label_tag(:doctor_id, 'Doctor Name') %></strong>
+	
+		<%= collection_select  @patient, :doctor_id, Doctor.all, :id, :full_name %>
+</p>
+		<%= submit_tag('Create Patient') %>
 <% end -%>
