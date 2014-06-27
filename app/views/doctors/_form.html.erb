@@ -1,40 +1,5 @@
 
-<%= form_tag doctor_path(@doctor), method: :put do%>
-<p>
-	<strong><%= label_tag(:name, "Name:") %></strong> 
-	<br>
-	<%= text_field_tag(:name,@doctor.name) %>
-</p>		
-<p>
-	<strong><%= label_tag(:surname, 'Surname:') %></strong>
-	<br>
-	<%= text_field_tag(:surname,@doctor.surname) %>
-</p>
-<p>
-	<strong><%= label_tag(:consultancy, "Consultancy:") %></strong>
-	<br>
-	<%= text_field_tag(:consultancy,@doctor.consultancy) %>
-</p>
-<p>
-	<strong><%= label_tag(:phone, "Phone") %></strong>
-	<br>
-	<%= text_field_tag(:phone, @doctor.phone) %>
-</p>
-<p>
-	<strong><%= label_tag(:manager_id, 'Manager:') %></strong>
-	<br>
-	<%= options_from_collection_for_select(Manager.all, :id, :full_name) %>
-	
-</p>   
-<p>
-	<strong><%= label_tag(:bio,'Biyografi:') %></strong> 
-	<br>
-	<%= text_area_tag(:bio) %>
-</p>
-	
-	<%= submit_tag('Update Doctor') %>
-<% end -%>
- <!---<%= form_for @doctor do |f|%>
+<%= form_for @doctor do |f|%>
 <p>
 	<%= f.label :name %><br>
 	<%= f.text_field :name %>
@@ -47,12 +12,20 @@
 	<%= f.label :consultancy %><br>
 	<%= f.text_field :consultancy %>
 </p>
+<p>	
+	<%= f.label :phone %>
+	<%= f.text_field :phone %>
+</p>
 <p>
-	<%= f.label :bio %><br>
+	<%= f.label :manager %>
+	<%= f.collection_select :manager_id, Manager.all, :id, :full_name %>
+</p>
+<p>
+	<%= f.label :bio, 'Biyografi' %><br>
 	<%= f.text_area :bio %>
 </p>
 	<%=f.submit %>
 
 
-<% end -%> 
--->
+<% end -%>
+

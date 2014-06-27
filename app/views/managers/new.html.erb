@@ -1,18 +1,4 @@
 <h4>Yeni mudur ekle:</h4>
 
-<%= form_tag "/mudurler", method: :post  do%>
-<p>
-	<strong><%= label_tag(:name, "Name:") %></strong> 	
-	
-	<%= text_field_tag(:name) %> 	    
-</p>	
-<p>	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
-	
-	<%= text_field_tag(:surname) %>      
-</p>	
-<p>	<strong><%= label_tag(:phone, "Phone:") %></strong> 
-	
-	<%= text_field_tag(:phone) %>
-</p>	
-	<%= submit_tag('Create Manager') %>
-<% end -%>
+<%= render 'form' %>
+

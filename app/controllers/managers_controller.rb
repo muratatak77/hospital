@@ -44,7 +44,7 @@ private
     @manager = Manager.find(params[:id])
   end
   def manager_params
-    params.permit(:name,:surname,:phone)
+    params.require(:manager).permit(:name,:surname,:phone)
   end
 
 end

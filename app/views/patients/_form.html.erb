@@ -1,25 +1,4 @@
-
-<%= form_tag patient_path(@patient), method: :put do%>
-<p>
-	<strong><%= label_tag(:name, "Name:") %></strong> 	
-	
-	<%= text_field_tag(:name, @patient.name) %>	    
-</p>	
-<p>	<strong><%= label_tag(:surname, 'Surname:') %></strong> 
-	
-	<%= text_field_tag(:surname, @patient.surname) %>    
-</p>	
-<p>	<strong><%= label_tag(:disease) %></strong>
-	
-	<%= text_field_tag(:disease, @patient.disease) %>
-</p>	
-<p>	<strong><%= label_tag(:bio, 'Sickness Past') %>/strong>
-	
-	<%= text_field_tag(:bio, @patient.bio) %>
-</p>	<%= submit_tag('Update Patient') %>
-<% end -%>
-<!--
-<%= form_for @patient do |f|%>
+	<%= form_for @patient do |f|%>
 <p>
 	<%= f.label :name %><br>
 	<%= f.text_field :name %>
@@ -33,11 +12,14 @@
 	<%= f.text_field :disease %>
 </p>
 <p>
-	<%= f.label :bio %><br>
+	<%= f.label :doctor %>
+	<%= f.collection_select  :doctor_id, Doctor.all, :id, :full_name %>
+</p>
+<p>
+	<%= f.label :sickness_past %><br>
 	<%= f.text_area :bio %>
 </p>
 	<%=f.submit %>
 
 
 <% end -%>
--->
