@@ -27,16 +27,10 @@ class HepsiBuradaController < ApplicationController
         next
       end
 
-      unless Interest.exists?(value: hb.value)
-        if hb.save
-          puts "Value and data saved."
-        else
-          puts "Not Saved"
-        end
-      else
-        puts "Kayit zaten var"
-      end
+      attrs  = { value: hb.value, data: hb.data }
+      proprty = Interest.find_or_create_by_value(attrs)
 
+  
     end
 
     redirect_to hepsi_burada_index_path
