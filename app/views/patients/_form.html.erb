@@ -15,9 +15,13 @@
 	<%= f.label :doctor %>
 	<%= f.collection_select  :doctor_id, Doctor.all, :id, :full_name %>
 </p>
+
 <p>
 	<%= f.label :interest %>
-	<%= f.select :interest,  options_for_select( @data.split().each {|d| [d] }), :selected => params[:id] %>
+
+	<%= @page.css('div.fleft.h32.temporaryCategories').each do |p| %>	
+	<%=  f.select(:interest, p.css("select#siteHeader_ddlCatalogs option").collect {|r| [ r.text ] })%>  
+    <% end -%>
 </p>
 <p>
 	<%= f.label :sickness_past %><br>
