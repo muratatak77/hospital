@@ -25,14 +25,11 @@
 
 	<p>
 		<%= label_tag "ilgi Alani" %>
-		<%= select_tag :interest_id, options_from_collection_for_select(@interests, "id", "data") %>
+		<%= select_tag "interest_id", options_for_select(@interests.collect{ |u| [u.data, u.id]}, :selected=>@patient.interest_id) %>
 	</p>
-
-
 
 	<p>
 		<%= submit_tag "Duzenle" %>
 	</p>
-
 
 <% end %>

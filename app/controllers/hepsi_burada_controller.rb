@@ -12,8 +12,6 @@ class HepsiBuradaController < ApplicationController
   def parsing
     @doc = Nokogiri::HTML(open(URL))
 
-    Interest.delete_all 
-
     @doc.css('div#tabInnerPortlet div#divMPTopSales select#ucTabPortlet_ucTopSales_ddCatalogs option').each do |el|
 
       hb = Interest.new
@@ -24,11 +22,19 @@ class HepsiBuradaController < ApplicationController
 
       hb.value = el["value"].to_s
       hb.data = el.children.to_s
-      
-      if hb.save
-        puts "Value and data saved."
+
+      if hb.value == ""
+        next
+      end
+
+      unless Interest.exists?(value: hb.value)
+        if hb.save
+          puts "Value and data saved."
+        else
+          puts "Not Saved"
+        end
       else
-        puts "Not Saved"
+        puts "Kayit zaten var"
       end
 
     end

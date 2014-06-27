@@ -16,9 +16,11 @@
 		<%= Doctor.find(p.doctor_id).full_name %>
 	<% end %>
 
+	( <%= p.interest_id %> - 
+
 	<% unless p.interest_id == nil %>
 		<%= Interest.find(p.interest_id).data %>
-	<% end %>
+	<% end %> )
 
 
 	 - <%= link_to "Detay" , patient_path(p) %> - <%= link_to "Duzenle" , edit_patient_path(p) %>
