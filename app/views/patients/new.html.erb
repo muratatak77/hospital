@@ -24,6 +24,13 @@
 	</p>
 
 	<p>
+		<%= label_tag "ilgi Alani" %>
+		<%= select_tag :interest_id, options_from_collection_for_select(@interests, "id", "data") %>
+	</p>
+
+
+
+	<p>
 		<%= submit_tag "Yeni Kayit" %>
 	</p>
 

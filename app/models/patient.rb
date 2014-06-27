@@ -1,4 +1,5 @@
 class Patient < ActiveRecord::Base
+  has_many :interests, dependent: :destroy
   belongs_to :doctor
 
   def full_name

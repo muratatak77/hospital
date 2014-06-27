@@ -1,0 +1,21 @@
+<h1>HepsiBurada#index</h1>
+
+
+<p>
+Dikkat sadece bir kere yapiniz. DB Guncellenecektir. Iliskili kayitlar kaybolacaktir. 
+
+Simdi cek <%= link_to "Katorileri getir" , parsing_path %> 
+
+</p>
+
+Hepsi burada DB var olan kategoriler. 
+
+<p>
+<%= @interests.each do |i| %>
+	<%= i.id %> - <%= i.value %> - <%= i.data %>
+	<hr>
+<% end %>
+
+</p>
+
+

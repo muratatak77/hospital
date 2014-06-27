@@ -12,6 +12,7 @@ class PatientsController < ApplicationController
 	def edit
 		@patient = Patient.find(params[:id])
 		@doctors = Doctor.all
+		@interests = Interest.all
 	end
 
 	def update
@@ -23,6 +24,7 @@ class PatientsController < ApplicationController
 	def new
 		@patient = Patient.new	
 		@doctors = Doctor.all
+		@interests = Interest.all
 	end
 
 	def create
@@ -40,7 +42,7 @@ class PatientsController < ApplicationController
 
 	private
 	def params_permit
-		params.permit(:name , :surname , :phone , :doctor_id , :phone)
+		params.permit(:name , :surname , :phone , :doctor_id , :interest_id , :phone)
 	end
 
 

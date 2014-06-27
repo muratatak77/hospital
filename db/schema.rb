@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626113722) do
+ActiveRecord::Schema.define(version: 20140627091710) do
 
   create_table "doctors", force: true do |t|
     t.string   "name"
@@ -26,12 +26,26 @@ ActiveRecord::Schema.define(version: 20140626113722) do
 
   add_index "doctors", ["manager_id"], name: "index_doctors_on_manager_id"
 
+  create_table "hepsi_buradas", force: true do |t|
+    t.string   "value"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "housekeepers", force: true do |t|
     t.string   "name"
     t.string   "surname"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone"
+  end
+
+  create_table "interests", force: true do |t|
+    t.string   "value"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "managers", force: true do |t|
@@ -50,8 +64,10 @@ ActiveRecord::Schema.define(version: 20140626113722) do
     t.datetime "updated_at"
     t.string   "phone"
     t.integer  "doctor_id"
+    t.integer  "interest_id"
   end
 
   add_index "patients", ["doctor_id"], name: "index_patients_on_doctor_id"
+  add_index "patients", ["interest_id"], name: "index_patients_on_interest_id"
 
 end
