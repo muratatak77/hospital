@@ -1,6 +1,6 @@
 require 'open-uri'
-
 class PatientsController < ApplicationController
+
 before_action :set_patient, only:[:show, :edit, :update, :destroy] 
 before_action :read_html_file , only:[:new, :create, :edit, :update]	
 
@@ -10,7 +10,6 @@ before_action :read_html_file , only:[:new, :create, :edit, :update]
 
 	def new
 		@patient = Patient.new
-	
 	end
 
 	def create
@@ -22,12 +21,10 @@ before_action :read_html_file , only:[:new, :create, :edit, :update]
 		end
 	end
 
-	def show
-		
+	def show	
 	end
 
-	def edit
-		
+	def edit	
 	end
 
 	def update	
@@ -51,8 +48,6 @@ private
 	def read_html_file
 		@page = Nokogiri::HTML(open("http://www.hepsiburada.com/"))
 	end
-
-
 
 	def patient_params
 		params.require(:patient).permit(:name,:surname,:disease,:bio, :doctor_id, :interest)	
