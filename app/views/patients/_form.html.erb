@@ -16,10 +16,12 @@
 	<%= f.collection_select  :doctor_id, Doctor.all, :id, :full_name %>
 </p>
 <p>
+	<%= f.label :interest %>
+	<%= f.select :interest,  options_for_select( @data.split().each {|d| [d] }), :selected => params[:id] %>
+</p>
+<p>
 	<%= f.label :sickness_past %><br>
 	<%= f.text_area :bio %>
 </p>
 	<%=f.submit %>
-
-
 <% end -%>
