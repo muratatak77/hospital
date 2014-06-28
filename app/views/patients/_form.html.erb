@@ -1,0 +1,32 @@
+<%= form_for @patient  do |f| %>
+	
+	<p>
+		<%= f.label "Ad" %>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label "Soyad" %>
+		<%= f.text_field :surname %>
+	</p>
+
+	<p>
+		<%= f.label "Tel" %>
+		<%= f.text_field :phone %>
+	</p>
+
+	<p>
+		<%= f.label "Doktor" %>
+		<%= f.select :doctor_id, options_from_collection_for_select(@doctors, "id", "full_name" , @patient.doctor_id ) %>
+	</p>
+
+	<p>
+		<%= f.label "ilgi Alani" %>
+		<%= f.select  "interest_id", options_for_select(@interests.collect{ |u| [u.data, u.id]}, :selected=>@patient.interest_id) %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

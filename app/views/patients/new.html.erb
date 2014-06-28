@@ -2,36 +2,4 @@
 
 <h3>Yeni Hasta Ekle</h3>
 
-<%= form_tag patients_path , method: :post do %>
-	<p>
-		<%= label_tag "Ad" %>
-		<%= text_field_tag :name %>
-	</p>
-
-	<p>
-		<%= label_tag "Soyad" %>
-		<%= text_field_tag :surname %>
-	</p>
-
-	<p>
-		<%= label_tag "Tel" %>
-		<%= text_field_tag :phone %>
-	</p>
-
-	<p>
-		<%= label_tag "Doktor" %>
-		<%= select_tag :doctor_id, options_from_collection_for_select(@doctors, "id", "full_name") %>
-	</p>
-
-	<p>
-		<%= label_tag "ilgi Alani" %>
-		<%= select_tag :interest_id, options_from_collection_for_select(@interests, "id", "data") %>
-	</p>
-
-
-
-	<p>
-		<%= submit_tag "Yeni Kayit" %>
-	</p>
-
-<% end %>
+<%= render 'form' %>
