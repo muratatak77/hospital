@@ -6,6 +6,8 @@ Hospital::Application.routes.draw do
   resources :patients, path: '/hastalar'
   resources :consultancies, path: '/bolumler'
 
+  get '/interests', to: 'interests#index' 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -22,9 +22,9 @@
 
 <p>
 	<%= f.label :interest %>
-	<%= @page.css('div.fleft.h32.temporaryCategories').each do |p| %>
-	<%=  f.select(:interest, p.css("select#siteHeader_ddlCatalogs option").collect { |t| t.text == "Tüm Kategorilerde" ?  'Please select' : [t.text] }) %>  
-    <% end -%>
+	
+	<%=  f.collection_select :interest_id, Interest.all, :id, :title, :selected => @patient.interest_id %>  
+    
 </p>
 
 <p>
